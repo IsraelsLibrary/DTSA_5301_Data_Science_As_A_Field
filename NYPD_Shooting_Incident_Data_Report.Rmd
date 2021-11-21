@@ -143,9 +143,10 @@ df_w_pred <- mutate(brooklyn_shootings, pred = predict(mod))
 summary(mod)
 
 ggplot(df_w_pred)+
-  geom_point(aes(x=brooklyn_dates, y=brooklyn_precincts), color="darkblue")+
-  geom_point(aes(x=brooklyn_dates, y=pred), color="green")+
+  geom_point(aes(x=brooklyn_dates, y=brooklyn_precincts,color="Actual Shootings"))+
+  geom_point(aes(x=brooklyn_dates, y=pred,color="Predicted Shootings"))+
   scale_x_discrete(guide = guide_axis(check.overlap = TRUE))+
+  guides(color=guide_legend(title = "Brooklyn Shootings"))+
   labs(title="Linear Regression Model (Brooklyn Precinct Shootings)",y="Brooklyn Precincts", x="Dates")
 ```
 
