@@ -3,8 +3,8 @@ title: "NYPD_Shooting_Incident_Data_Report"
 author: "Israel Johnson"
 date: "11/21/2021"
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -13,12 +13,12 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Objective
 
-This incident data report will provide specific analysis and results, based upon the following dataset: 'NYPD Shooting Incident Data (Historic)'. To get started, we will need to install the following R libraries for further use:
+This incident data report will provide specific analysis and results, based upon the following dataset: 'NYPD Shooting Incident Data (Historic)', provided by the NYC OpenData program. To get started, we will need to install the following R packages for further use:
 
 1.) tidyverse
 2.) sessioninfo
 
-Once installed, the following code will load key packages from the required library that will be used for this analysis.
+Once installed, the following code will load key libraries from the required packages that will be used for this analysis.
 
 ```{r packages}
 library(tidyr)
@@ -29,7 +29,7 @@ library(ggplot2)
 We will need to import the required dataset from the following source: <https://catalog.data.gov/dataset>. Once you are there, proceed with the following steps:
 
 1.) Search for the dataset titled 'NYPD Shooting Incident Data (Historic)'
-2.) Right click on the CSV button next to the title, and copy the link address into your respective RMD document, as shown in the code below.
+2.) Right click on the CSV button next to the title, and copy the link address into your respective RMD document.
 
 The following code completes this process and reads in the data in a CSV format.
 
@@ -88,11 +88,11 @@ legend("topright", legend = c("Fatal Shootings", "Non-fatal Shootings"),
 ```
 
 ## Data Visualization 02 : Percentage of Shootings in Brooklyn By Age Group (From 2006 - 2020)
-The second visualization will require further transformations of the data. Based on the results of the first visualization, the conclusion can be made that the New York borough with the highest number of shootings from 2006 to 2020 appears to be Brooklyn. In this case, two more questions come to mind: "Why does Brooklyn have the highest number of shootings within this timeframe? Can information on the different age groups involved provide more insight on the situation in Brooklyn?". These questions form the basis of the second visualization.
+The second visualization will require further transformations of the data. Based on the results of the first visualization, the conclusion can be made that the New York borough with the highest number of shootings from 2006 to 2020 is Brooklyn. In this case, two more questions come to mind: "Why does Brooklyn have the highest number of shootings within this timeframe? Can information on the different age groups involved provide more insight on the situation in Brooklyn?". These questions form the basis of the second visualization.
 
 Using knowledge from the first visualization results, the next visualization focuses on how the number of shootings in Brooklyn during this time frame take place between different age groups.
 
-One discovery that was made when further transforming the data included the fact that many shooting incidents had a missing entry or no recorded entry for the 'Age Group' attribute within the provided dataset. To handle the missing age group entries for certain observations, I assigned theses entries to the 'UNKNOWN' category, which provided more clarity on how the missing data could impact further visualization and analysis.
+One discovery that was made when further transforming the data included the fact that many shooting incidents had a missing entry or no recorded entry for the 'Age Group' attribute within the provided dataset. To handle the missing age group entries for certain observations, I assigned these entries to the 'UNKNOWN' category, which provided more clarity on how the missing data could impact further visualization and analysis.
 
 Further transformations are shown in the following code as well as in the second visualization, which provides further details on Brooklyn shootings among the different categories of age groups. Upon conclusion, I made another discovery that was most concerning: more than half (specifically 54.93%) of the total number of Brooklyn shooting entries were shown to have an 'UNKNOWN' age group assigned to them, indicating that more than half of the Brooklyn entries did not have a recorded age group from the original dataset. Many factors can attribute to this missing data, including: short time duration to identify suspect during incident, clothing of suspect obscuring further identifiable traits, local law enforcement not having the technology nor means to gather specific details, etc.
 
